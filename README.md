@@ -1,1 +1,63 @@
-🌲 BPC-IoT Projekt #4: Detektor lesních požárůTento projekt se zaměřuje na vývoj energeticky efektivního IoT zařízení pro včasnou detekci lesních požárů v národních parcích a lesích ČR/SR. Systém monitoruje environmentální data, přičemž kritické stavy reportuje v reálném čase.📋 Přehled funkcíPeriodické měření: Snímání teploty a vlhkosti každých 30 minut.Dávkový přenos dat: Odesílání naměřených dat na server v intervalu 6 hodin (výrazná optimalizace spotřeby energie).Okamžitý ALARM: Při překročení prahové hodnoty (výchozí: $40$ °C) dojde k okamžitému odeslání varovné zprávy bez čekání na další dávkový interval.False Alarm Recovery: Automatická notifikace v momentě, kdy teplota klesne zpět do bezpečných hodnot.Diagnostika sítě: Odesílání technických parametrů NB-IoT pro monitoring kvality pokrytí (RSRP, SINR, CellID, TAC, Band).Energetický management: Implementace režimů hlubokého spánku (Deep Sleep) a PSM (Power Saving Mode).🛠 Technické řešeníKonektivita: NB-IoTPro tento projekt byla zvolena technologie NB-IoT z následujících klíčových důvodů:Vynikající prostupnost: Signál NB-IoT vykazuje skvělý dosah i v hustě zalesněném terénu a členitých oblastech (skalní útvary, rokle).Energetická efektivita: Podpora režimů eDRX a PSM umožňuje provoz na baterii po dobu několika let.Licencované pásmo: Vyšší spolehlivost a garantovaná kvalita služeb (QoS) oproti LoRaWAN v místech, kde je kritické okamžité doručení alarmu.ProtokolyTransportní: UDP (zvoleno pro minimální overhead a úsporu energie při přenosu krátkých zpráv).Aplikační: * LwM2M nebo MQTT (dle zvoleného backendu).Custom Binary Payload (pro maximální kompresi dat a úsporu cenných bytů v NB-IoT paketu).
+# 🌲 BPC‑IoT Projekt #4: Detektor lesních požárů
+
+Tento projekt se zaměřuje na vývoj energeticky efektivního IoT zařízení pro včasnou detekci lesních požárů v národních parcích a lesích ČR/SR.  
+Systém monitoruje environmentální data a kritické stavy reportuje v reálném čase.
+
+---
+
+## 📋 Přehled funkcí
+
+### 🔁 Periodické měření
+- Snímání teploty a vlhkosti každých 30 minut.
+
+### 📡 Dávkový přenos dat
+- Odesílání naměřených dat na server v intervalu 6 hodin  
+  → výrazná úspora energie.
+
+### 🚨 Okamžitý ALARM
+- Při překročení prahové hodnoty (40 °C) se odešle okamžitá varovná zpráva.
+- Alarm nečeká na další dávkový interval.
+
+### 🔄 False Alarm Recovery
+- Automatická notifikace při návratu teploty do bezpečných hodnot.
+
+### 📶 Diagnostika sítě
+- Odesílání technických parametrů NB‑IoT:
+  - RSRP
+  - SINR
+  - CellID
+  - TAC
+  - Band
+
+### 🔋 Energetický management
+- Podpora režimů:
+  - Deep Sleep
+  - PSM (Power Saving Mode)
+
+---
+
+## 🛠 Technické řešení
+
+### 📡 Konektivita: NB‑IoT
+
+Důvody výběru:
+- Vynikající prostupnost signálu  
+  → vhodné pro husté lesy, skalní útvary, rokle.
+- Energetická efektivita  
+  → eDRX a PSM umožňují provoz na baterii několik let.
+- Licencované pásmo  
+  → vyšší spolehlivost a garantovaná QoS oproti LoRaWAN.
+
+---
+
+## 🔗 Protokoly
+
+### Transportní
+- UDP  
+  → minimální overhead, nízká spotřeba energie.
+
+### Aplikační
+- LwM2M nebo MQTT (dle backendu)
+- Custom Binary Payload  
+  → maximální komprese dat, úspora bytů v NB‑IoT paketu.
+
