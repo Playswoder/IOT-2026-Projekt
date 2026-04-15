@@ -61,3 +61,5 @@ Důvody výběru:
 - Custom Binary Payload  
   → maximální komprese dat, úspora bytů v NB‑IoT paketu.
 
+<img width="1920" height="1152" alt="image" src="https://github.com/user-attachments/assets/058a1b1f-40b0-4e3c-9ab7-c96093af683f" />
+
