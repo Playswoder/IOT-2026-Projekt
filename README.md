@@ -57,7 +57,6 @@ Důvody výběru:
   → minimální overhead, nízká spotřeba energie.
 
 ### Aplikační
-- LwM2M nebo MQTT (dle backendu)
 - Custom Binary Payload  
   → maximální komprese dat, úspora bytů v NB‑IoT paketu.
 ### 1.Nástřel blokového schéma
