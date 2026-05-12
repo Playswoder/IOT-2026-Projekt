@@ -60,6 +60,6 @@ Důvody výběru:
 - Custom Binary Payload  
   → maximální komprese dat, úspora bytů v NB‑IoT paketu.
 ### 1.Nástřel blokového schéma
-<img width="1106" height="932" alt="image" src="https://github.com/user-attachments/assets/b63578b8-924e-4193-9eab-4cb3cf95563e" />
+<img width="1106" height="932" alt="image" src="https://github.com/Playswoder/IOT-2026-Projekt/blob/main/misc/screen/Log_schema.png?raw=true" />
 
 
