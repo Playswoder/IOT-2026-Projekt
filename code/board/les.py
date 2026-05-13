@@ -38,6 +38,11 @@ PSM_T3412 = "00000011"  # 6 hodin "00100110" 30minut "00000011" 10minut "0000000
 # =============================================================================
 
 mod_en = machine.Pin(25, machine.Pin.OUT, value=1)
+pon_trig = machine.Pin(9,machine.Pin.OUT)
+# Probuzení modemu (WAKEUP_IN nebo PWRKEY)
+pon_trig.value(1)
+time.sleep(0.3)
+pon_trig.value(0)
 time.sleep(2)
 
 i2c = machine.SoftI2C(scl=machine.Pin(15), sda=machine.Pin(14), freq=100000)
@@ -45,7 +50,7 @@ sensor = ahtx0.AHT10(i2c)
 
 bg_uart = machine.UART(0, baudrate=115200, tx=machine.Pin(0), rx=machine.Pin(1))
 modem = BG77.BG77(bg_uart, verbose=True, radio=True)
-pon_trig = machine.Pin(9,machine.Pin.OUT)
+
 # =============================================================================
 # FUNKCE
 # =============================================================================
